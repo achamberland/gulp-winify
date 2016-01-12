@@ -33,7 +33,7 @@ To this:
 <div class="billing-address__input ¢ selected ♥">...</div>
 ```
 
-##Usage:
+##Install:
 
 To install, type `npm install --save gulp-winify`
 
@@ -116,7 +116,7 @@ Using JavaScript's document.registerElement to let custom minified tags replace 
 
 
 ##Contributing:  
-Feel free to make a pull request, any help is welcome
+Feel free to fork and make a pull request, any help is welcome
  
 
 ##License  
