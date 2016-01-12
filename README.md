@@ -11,7 +11,7 @@ This project is still in early stages so make sure to test before making product
 
 ##How it works:  
 
-The selectors in your CSS get minified. Each class and id are reduced to one unique UTF-8 character, which is added as a separate class to the original element in your HTML. None of the original HTML is replaced, so there are no side effects.
+The selectors in your CSS get minified. Each class (and optionally, id) are reduced to one unique UTF-8 character, which is added as a separate class to the original element in your HTML. None of the original HTML is replaced, so there are no side effects.
 
 
 ### Example:
@@ -47,8 +47,8 @@ var cssnano = require('gulp-cssnano');
 
 gulp.task('default', function(){
   return gulp.src( ['./src/*.css', './src/*.html'] )
+    .pipe( winify() )
     .pipe( cssnano() )
-  	.pipe( winify() )
     .pipe( gulp.dest('./dist') ); 
 });
 ```
@@ -71,8 +71,9 @@ gulp.task('css', function(){
 ###Options:
 An options object can be passed into your gulpfile's call to winify(). Options will usually be for enabling features in development, or features that might be too aggressive for some projects.
 
-`experimental: true`: Turn on experimental features currently in development. (Default: false)  
+`experimental: true`: Turn on experimental features currently in development. (Default: false) 
 `alphabeticSelectors: true`: Start minified class characters at alphabetic letters [A-z]. (Default: false)
+`minifyIds: true`: Minify ids. (Currently will add a second id until class/id replacement is developed. Two ids on one element isn't valid in HTML and will cause browser issues until then). (Default: false)
 
 Example gulpfile call:  
 `.pipe( winify({ experimental: true }) )`

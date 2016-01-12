@@ -1,6 +1,15 @@
 #gulp-winify changelog
 
 
+##0.1.2 (01/11/16)
+
+###Allow ID tags to be minified by setting `minifyIds` to true in the gulpfile's winify call
+
+Also:
+- Fix issues preventing user settings from being applied in builds
+- Prevent '.' being prepended to classes in the html file output
+
+
 ##0.1.1 (01/11/16)
 
 ###Close parentheses of pseudo-selectors that take classes as parameters
