@@ -2,7 +2,7 @@
   "name": "gulp-winify",
   "description": "Aggressive CSS/HTML minifier",
   "author": "Adam Chamberland",
-  "version": "0.1.2",
+  "version": "0.1.2-dev",
   "main": "index.js",
   "keywords": [
     "gulpplugin"
@@ -18,7 +18,7 @@
   "bugs": "https://github.com/achamberland/gulp-winify/issues",
   "dependencies": {
     "acorn": "^2.7.0",
-    "cheerio": "^0.19.0",
+    "cheerio": "^0.18.0",
     "css": "^2.2.1",
     "escodegen": "^1.8.0",
     "through2": "^2.0.0",
@@ -28,5 +28,8 @@
     "chai": "^3.4.1",
     "mocha": "^2.3.4",
     "sinon": "^1.17.2"
+  },
+  "engines" : { 
+    "node" : ">=4.0.0" 
   }
 }

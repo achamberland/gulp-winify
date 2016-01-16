@@ -45,7 +45,7 @@ var gulp = require('gulp');
 var winify = require('gulp-winify');
 var cssnano = require('gulp-cssnano');
 
-gulp.task('default', function(){
+gulp.task('default', function() {
   return gulp.src( ['./src/*.css', './src/*.html'] )
     .pipe( winify() )
     .pipe( cssnano() )
@@ -55,13 +55,13 @@ gulp.task('default', function(){
 
 Winify can also be called in separate gulp tasks with no issues:
 ```
-gulp.task('html', function(){
+gulp.task('html', function() {
   return gulp.src( './src/*.html' )
   	.pipe( winify() )
     .pipe( gulp.dest('./dist') ); 
 });
 
-gulp.task('css', function(){
+gulp.task('css', function() {
   return gulp.src( './src/*.css' )
   	.pipe( winify() )
     .pipe( gulp.dest('./dist') ); 
@@ -71,12 +71,12 @@ gulp.task('css', function(){
 ###Options:
 An options object can be passed into your gulpfile's call to winify(). Options will usually be for enabling features in development, or features that might be too aggressive for some projects.
 
-`experimental: true`: Turn on experimental features currently in development. (Default: false) 
+`experimentalFeatures: true`: Turn on experimental features currently in development. (Default: false) 
 `alphabeticSelectors: true`: Start minified class characters at alphabetic letters [A-z]. (Default: false)
 `minifyIds: true`: Minify ids. (Currently will add a second id until class/id replacement is developed. Two ids on one element isn't valid in HTML and will cause browser issues until then). (Default: false)
 
 Example gulpfile call:  
-`.pipe( winify({ experimental: true }) )`
+`.pipe( winify({ experimentalFeatures: true }) )`
 
 
 

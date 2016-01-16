@@ -1,9 +1,17 @@
 #gulp-winify changelog
 
+##0.1.3 (01/15/16)
+
+###Refactor
+
+- Split processors.js into separate files for HTML, CSS and JS
+- Follow felixge's [style guide](https://github.com/felixge/node-style-guide)
+- Improve readability and clean up code
+
 
 ##0.1.2 (01/11/16)
 
-###Allow ID tags to be minified by setting `minifyIds` to true in the gulpfile's winify call
+###Prevent ID tags from being minified unless `minifyIds` is set to true in the gulpfile's winify call
 
 Also:
 - Fix issues preventing user settings from being applied in builds
@@ -12,13 +20,13 @@ Also:
 
 ##0.1.1 (01/11/16)
 
-###Close parentheses of pseudo-selectors that take classes as parameters
+###Close pseudo-selector parentheses
 
-- Refactor splitting the css ast selector string into individual classes/ids
+- Refactor extracting classes and id's from css selector strings
 - Update Readme
 
 
-##0.1 (01/11/16)
+##0.1.0 (01/11/16)
 
 ###Initial Release
 
