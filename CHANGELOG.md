@@ -1,5 +1,13 @@
 #gulp-winify changelog
 
+
+##0.1.4 (01/25/16)
+
+- Add unit and end-to-end testing with mocha and chai
+- Use default properties for each module to reset to on init
+- Bugfix: User config wasn't applied when processing embedded css
+- Bugfix: Charactrer not reset to start when last valid character reached and selector length extended to 2
+
 ##0.1.3 (01/15/16)
 
 ###Refactor
