@@ -1,0 +1,63 @@
+/*Class */
+
+.¢ {
+  color: #0f0;
+}
+
+/* Tag with class */
+
+¢.¢ {
+  border: 1px solid #66f;
+}
+
+/* Class with tag */
+
+.£ a {
+  text-decoration: none;
+}
+
+/* Tag with child class */
+
+£ .¢ {
+  background: #ff6;
+}
+
+/* Multi-selector rules */
+
+.¢ a,
+.¢ p,
+.¢ h1 {
+  font-weight: 700;
+}
+
+/* :not pseudo-selectors with class */
+
+.¢:not(.¤) {
+  opacity: 1;
+}
+
+/* :not pseudo-selectors with another pseudo-selector */
+
+£ ¢.¢:not(:hover) {
+  color: #f00;
+}
+
+/* Pseudo-selector with a :not pseudo-selector & class */
+
+£ ¢:hover:not(.¢) {
+  color: #ff0;
+}
+
+/* To add and support: attr[class='...'] and all other alt equality signs */
+
+#page-top {
+  visibility: hidden;
+}
+
+¤ {
+  background: 'hot pink';
+}
+
+£ ¥ ¢ {
+  list-style: none;
+}

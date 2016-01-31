@@ -3,18 +3,18 @@
 const through = require( 'through2' )
 const gutil   = require( 'gulp-util' )
 
-let config     = require( './lib/config.js' )
-let processors = require( './lib/processors.js' )
+let Config     = require( './lib/Config.js' )
+let Processors = require( './lib/Processors.js' )
 
 
 const PLUGIN_NAME = 'gulp-winify'
 
 
-function winify( options ) {
+function winify ( options ) {
 
-  config.init( options );
+  Config.init( options );
 
-  return through.obj( function( file, enc, cb ) {
+  return through.obj( ( file, enc, cb ) => {
 
     let fileExtension = getExtension( file.history[0] )
 
@@ -24,7 +24,9 @@ function winify( options ) {
 
     if ( file.isBuffer() ) {
       let fileString = file.contents.toString( 'utf-8' )
-      file.contents = new Buffer( processFile( fileString, fileExtension ) )
+      let output = processFile( fileString, fileExtension, Config )
+
+      file.contents = new Buffer( output )
     }
 
     else if ( file.isStream() ) {
@@ -50,11 +52,14 @@ function getExtension( path ) {
 }
 
 
-function processFile( fileString, fileExtension ){
+function processFile( fileString, fileExtension ) {
 
-  fileString = !!fileString ? fileString.replace( /\s/, '' ) : fileString
+  fileString = !!fileString 
+    ? fileString.replace( /\s/, '' ) 
+    : fileString
 
-  let output = processors[`process${fileExtension}`]( fileString, 'UTF-8', config )
+  let processorMethod = Processors[`process${fileExtension}`]
+  let output = processorMethod( fileString, 'UTF-8', Config )
 
   return output || fileString
 
