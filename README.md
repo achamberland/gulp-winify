@@ -1,5 +1,7 @@
 Winify
 ===================
+(Note - This project is in an early stage and is no longer being developed - [Styletron](http://styletron.js.org/) is a better alternative with similar results if you're willing to use React and CSS-in-JS)
+
 Minify your CSS up to 30% smaller than other minifiers alone.
 
 This plugin reads the classes in your CSS selectors and converts them to one-character long minified names. These new class names and ids are then added to your HTML files, along with the original classes.
@@ -9,7 +11,7 @@ More improvements are coming, including CSS property minification, tag minificat
 This project is still in early stages so make sure to test before making production builds with it.
 
 
-##How it works:  
+## How it works:  
 
 The selectors in your CSS get minified. Each class (and optionally, id) are reduced to one unique UTF-8 character, which is added as a separate class to the original element in your HTML. None of the original HTML is replaced, so there are no side effects.
 
@@ -33,7 +35,7 @@ To this:
 <div class="billing-address__input ¢ selected ♥">...</div>
 ```
 
-##Install:
+## Install:
 
 To install, type `npm install --save gulp-winify`
 
@@ -68,7 +70,7 @@ gulp.task('css', function() {
 });
 ```
 
-###Options:
+### Options:
 An options object can be passed into your gulpfile's call to winify(). Options will usually be for enabling features in development, or features that might be too aggressive for some projects.
 
 `experimentalFeatures: true`: Turn on experimental features currently in development. (Default: false) 
